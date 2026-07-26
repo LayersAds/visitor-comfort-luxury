@@ -105,12 +105,13 @@ export function Footer() {
         </p>
         <p className="container-x mt-2 text-center text-xs">
           <a
-            href="https://web.layesads.com"
+            href="https://web.layersads.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-primary-foreground/70 transition-colors hover:text-accent"
+            className="inline-flex items-center gap-1 font-bold text-primary-foreground/70 transition-colors hover:text-accent"
           >
             تم برمجة هذا الموقع عن طريق وكالة لايرز
+            <ExternalLink className="h-3 w-3 opacity-60" aria-hidden="true" />
           </a>
         </p>
       </div>
