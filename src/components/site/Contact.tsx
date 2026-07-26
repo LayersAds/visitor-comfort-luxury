@@ -3,6 +3,7 @@ import { MapPin, Phone, MessageCircle, Instagram } from "lucide-react";
 import { WHATSAPP_COMPANY, INSTAGRAM, TIKTOK } from "./data";
 import { SectionHead } from "./Sections";
 import { TikTokIcon } from "./TikTokIcon";
+import { ArabicDateInput, formatArabicDate } from "./ArabicDateInput";
 
 const SERVICE_TYPES = [
   "حجز فندقي",
@@ -37,7 +38,7 @@ export function Contact() {
       `رقم الجوال: ${form.phone || "-"}`,
       `الوجهة: ${form.destination}`,
       `نوع الخدمة: ${form.service}`,
-      `تاريخ الوصول: ${form.date || "-"}`,
+      `تاريخ الوصول: ${form.date ? formatArabicDate(form.date) : "-"}`,
       `عدد الأشخاص: ${form.guests || "-"}`,
       `ملاحظات: ${form.notes || "-"}`,
     ].join("\n");
@@ -138,7 +139,15 @@ export function Contact() {
               <option key={s}>{s}</option>
             ))}
           </Select>
-          <Input label="تاريخ الوصول" value={form.date} onChange={set("date")} type="date" />
+          <label className="flex flex-col gap-1.5">
+            <span className="text-xs font-bold text-muted-foreground">تاريخ الوصول</span>
+            <span className="rounded-2xl border border-border bg-background px-4 py-3 text-sm transition-colors focus-within:border-accent">
+              <ArabicDateInput
+                value={form.date}
+                onChange={(v) => setForm((f) => ({ ...f, date: v }))}
+              />
+            </span>
+          </label>
           <Input
             label="عدد الأشخاص"
             value={form.guests}

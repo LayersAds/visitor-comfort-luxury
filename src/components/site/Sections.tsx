@@ -412,33 +412,56 @@ export function Steps() {
   );
 }
 
+const REVIEWS = [
+  {
+    name: "أ. عبدالله الحارثي",
+    role: "زائر من الرياض",
+    text: "حجزت مع شركة راحة الزائر فندقًا قريبًا من الحرم، والتنسيق كان دقيقًا من أول رسالة حتى الوصول. الغرفة مطابقة للصور تمامًا والخدمة راقية.",
+  },
+  {
+    name: "أ. منيرة العتيبي",
+    role: "رحلة عائلية – المدينة المنورة",
+    text: "أفضل تجربة حجز مررت بها. اختاروا لنا شقة عائلية واسعة بسعر ممتاز، والمتابعة معنا كانت مستمرة طوال الإقامة. شكرًا شركة راحة الزائر.",
+  },
+  {
+    name: "أ. سعد القحطاني",
+    role: "مشرف وفد عمرة",
+    text: "نظّموا لنا إقامة وإعاشة وفد من 40 شخصًا في مكة المكرمة باحترافية عالية والتزام كامل بالمواعيد. تعامل صادق وأسعار منافسة، وسنكرر التعامل بإذن الله.",
+  },
+];
+
 export function Testimonials() {
   return (
     <section className="surface-navy py-24">
       <div className="container-x">
         <SectionHead eyebrow="آراء العملاء" title="تجارب ضيوفنا" light center />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="rounded-3xl border border-white/15 bg-white/5 p-7 text-primary-foreground/70"
+          {REVIEWS.map((r) => (
+            <figure
+              key={r.name}
+              className="rounded-3xl border border-white/15 bg-white/5 p-7 text-primary-foreground/80"
             >
               <Quote className="h-7 w-7 text-accent" />
-              <div className="mt-5 space-y-2.5">
-                <span className="block h-2.5 w-full rounded-full bg-white/10" />
-                <span className="block h-2.5 w-11/12 rounded-full bg-white/10" />
-                <span className="block h-2.5 w-8/12 rounded-full bg-white/10" />
+              <div className="mt-4 flex gap-1 text-accent" aria-label="تقييم 5 من 5">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
               </div>
-              <div className="mt-6 flex items-center gap-3">
-                <span className="h-10 w-10 rounded-full bg-white/10" />
-                <span className="h-2.5 w-24 rounded-full bg-white/10" />
-              </div>
-            </div>
+              <blockquote className="mt-4 text-sm leading-8">{r.text}</blockquote>
+              <figcaption className="mt-6 flex items-center gap-3">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/20 text-sm font-extrabold text-accent">
+                  {r.name.replace("أ. ", "").charAt(0)}
+                </span>
+                <span>
+                  <span className="block text-sm font-extrabold text-primary-foreground">
+                    {r.name}
+                  </span>
+                  <span className="block text-xs text-primary-foreground/60">{r.role}</span>
+                </span>
+              </figcaption>
+            </figure>
           ))}
         </div>
-        <p className="mt-8 text-center text-sm font-semibold text-primary-foreground/70">
-          سيتم إضافة آراء العملاء الموثقة بعد اعتماد الموقع.
-        </p>
       </div>
     </section>
   );

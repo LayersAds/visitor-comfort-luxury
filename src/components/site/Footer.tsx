@@ -103,6 +103,16 @@ export function Footer() {
         <p className="container-x text-center text-xs text-primary-foreground/60">
           © {new Date().getFullYear()} شركة راحة الزائر للسياحة. جميع الحقوق محفوظة.
         </p>
+        <p className="container-x mt-2 text-center text-xs">
+          <a
+            href="https://web.layesads.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-primary-foreground/70 transition-colors hover:text-accent"
+          >
+            تم برمجة هذا الموقع عن طريق وكالة لايرز
+          </a>
+        </p>
       </div>
     </footer>
   );
