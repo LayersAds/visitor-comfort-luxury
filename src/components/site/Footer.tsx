@@ -10,14 +10,14 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <img
               src="/images/logo.png"
-              alt="شعار شركة راحة الزائر للسياحة"
+              alt="شعار شركة راحة الزائر للسياحة والضيافة"
               width={56}
               height={56}
               loading="lazy"
               className="h-14 w-14 rounded-2xl object-cover"
             />
-            <span className="text-lg font-extrabold text-primary-foreground">
-              راحة الزائر للسياحة
+            <span className="whitespace-pre-line text-lg font-extrabold text-primary-foreground">
+              {"شركة راحة الزائر\nللسياحة والضيافة"}
             </span>
           </div>
           <p className="mt-4 text-sm leading-7 text-primary-foreground/70">
@@ -101,7 +101,7 @@ export function Footer() {
 
       <div className="border-t border-white/10 py-6">
         <p className="container-x text-center text-xs text-primary-foreground/60">
-          © {new Date().getFullYear()} شركة راحة الزائر للسياحة. جميع الحقوق محفوظة.
+          © {new Date().getFullYear()} شركة راحة الزائر للسياحة والضيافة. جميع الحقوق محفوظة.
         </p>
         <p className="container-x mt-2 text-center text-xs">
           <a
