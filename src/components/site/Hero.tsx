@@ -1,9 +1,33 @@
 import { useState } from "react";
-import { CalendarDays, MapPin, Search, Users, MessageCircle } from "lucide-react";
+import { CalendarDays, MapPin, Users, MessageCircle } from "lucide-react";
 import { WHATSAPP_COMPANY } from "./data";
+import { ArabicDateInput, formatArabicDate } from "./ArabicDateInput";
 
 export function Hero() {
-  const [notice, setNotice] = useState(false);
+  const [destination, setDestination] = useState("مكة المكرمة");
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [guests, setGuests] = useState("2");
+
+  const book = (e: React.FormEvent) => {
+    e.preventDefault();
+    const msg = [
+      "السلام عليكم ورحمة الله وبركاته 🌿",
+      "أرغب في إتمام حجز عبر *شركة راحة الزائر للسياحة*، وهذه تفاصيل طلبي:",
+      "",
+      `• الوجهة: ${destination}`,
+      `• تاريخ الوصول: ${checkIn ? formatArabicDate(checkIn) : "غير محدد"}`,
+      `• تاريخ المغادرة: ${checkOut ? formatArabicDate(checkOut) : "غير محدد"}`,
+      `• عدد النزلاء: ${guests || "-"}`,
+      "",
+      "أرجو تزويدي بالخيارات المتاحة والأسعار. وشكرًا لكم 🌸",
+    ].join("\n");
+    window.open(
+      `https://wa.me/${WHATSAPP_COMPANY}?text=${encodeURIComponent(msg)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
 
   return (
     <section id="home" className="relative isolate overflow-hidden">
@@ -58,16 +82,15 @@ export function Hero() {
         </div>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setNotice(true);
-          }}
+          onSubmit={book}
           className="rise mt-12 rounded-3xl border border-white/25 bg-white/85 p-4 shadow-[0_30px_70px_-35px_rgba(0,0,0,0.7)] backdrop-blur-xl sm:p-5"
         >
           <div className="grid gap-3 md:grid-cols-5">
             <Field label="الوجهة" icon={<MapPin className="h-4 w-4" />}>
               <select
                 name="destination"
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
                 className="w-full bg-transparent text-sm font-semibold text-foreground outline-none"
               >
                 <option>مكة المكرمة</option>
@@ -81,35 +104,25 @@ export function Hero() {
               </select>
             </Field>
             <Field label="تاريخ الوصول" icon={<CalendarDays className="h-4 w-4" />}>
-              <input
-                type="date"
-                className="w-full bg-transparent text-sm font-semibold text-foreground outline-none"
-              />
+              <ArabicDateInput value={checkIn} onChange={setCheckIn} />
             </Field>
             <Field label="تاريخ المغادرة" icon={<CalendarDays className="h-4 w-4" />}>
-              <input
-                type="date"
-                className="w-full bg-transparent text-sm font-semibold text-foreground outline-none"
-              />
+              <ArabicDateInput value={checkOut} onChange={setCheckOut} />
             </Field>
             <Field label="عدد النزلاء" icon={<Users className="h-4 w-4" />}>
               <input
                 type="number"
                 min={1}
-                defaultValue={2}
+                value={guests}
+                onChange={(e) => setGuests(e.target.value)}
                 className="w-full bg-transparent text-sm font-semibold text-foreground outline-none"
               />
             </Field>
             <button type="submit" className="btn-gold h-full min-h-14 w-full">
-              <Search className="h-5 w-5" />
-              ابحث
+              <MessageCircle className="h-5 w-5" />
+              حجز
             </button>
           </div>
-          {notice && (
-            <p className="mt-3 rounded-xl bg-secondary px-4 py-3 text-sm font-semibold text-primary">
-              سيتم تفعيل نظام الحجز بعد اعتماد الموقع.
-            </p>
-          )}
         </form>
       </div>
     </section>
