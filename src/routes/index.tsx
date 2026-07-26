@@ -16,7 +16,7 @@ import {
 } from "@/components/site/Sections";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
-import { PreviewBar } from "@/components/site/PreviewBar";
+
 
 const TITLE = "شركة راحة الزائر للسياحة | حجوزات الفنادق ووحدات الضيافة";
 const DESC =
@@ -69,7 +69,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="pb-28 sm:pb-20">
+    <div>
       <Header />
       <main>
         <Hero />
@@ -87,7 +87,6 @@ function Index() {
         <Contact />
       </main>
       <Footer />
-      <PreviewBar />
     </div>
   );
 }

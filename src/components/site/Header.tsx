@@ -32,7 +32,7 @@ export function Header() {
             <span
               className={`block text-base font-extrabold ${solid ? "text-primary" : "text-primary-foreground"}`}
             >
-              راحة الزائر
+              شركة راحة الزائر
             </span>
             <span
               className={`block text-[11px] tracking-wide ${solid ? "text-muted-foreground" : "text-primary-foreground/75"}`}
