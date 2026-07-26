@@ -69,7 +69,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="pb-28 sm:pb-20">
+    <div>
       <Header />
       <main>
         <Hero />
