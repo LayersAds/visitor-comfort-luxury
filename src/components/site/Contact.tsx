@@ -69,7 +69,7 @@ export function Contact() {
                   الجوال وواتساب
                 </span>
                 <span dir="ltr" className="block text-lg font-extrabold text-primary">
-                  0502053445
+                  0558344453
                 </span>
               </span>
             </a>

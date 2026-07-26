@@ -85,7 +85,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-accent"
               >
-                0502053445
+                0558344453
               </a>
             </li>
             <li className="flex items-center gap-2">

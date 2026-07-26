@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
           name: "شركة راحة الزائر للسياحة",
           description: DESC,
           image: "/images/social-preview.jpg",
-          telephone: "+966502053445",
+          telephone: "+966558344453",
           areaServed: "SA",
           address: {
             "@type": "PostalAddress",
