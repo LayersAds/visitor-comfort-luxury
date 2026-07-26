@@ -1,24 +1,93 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import {
+  Services,
+  Stays,
+  Destinations,
+  Hajj,
+  Catering,
+  RealEstate,
+  About,
+  Why,
+  Steps,
+  Testimonials,
+  Faq,
+} from "@/components/site/Sections";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { PreviewBar } from "@/components/site/PreviewBar";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "شركة راحة الزائر للسياحة | حجوزات الفنادق ووحدات الضيافة";
+const DESC =
+  "شركة راحة الزائر للسياحة تقدم حجوزات الفنادق والشقق والمنتجعات ووحدات الضيافة في مكة المكرمة والمدينة المنورة وجميع مناطق المملكة.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "ar_SA" },
+      { property: "og:url", content: "/" },
+      { property: "og:image", content: "/images/social-preview.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: "/images/social-preview.jpg" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TravelAgency",
+          name: "شركة راحة الزائر للسياحة",
+          description: DESC,
+          image: "/images/social-preview.jpg",
+          telephone: "+966502053445",
+          areaServed: "SA",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "مكة المكرمة",
+            addressRegion: "حي العوالي",
+            addressCountry: "SA",
+          },
+          sameAs: [
+            "https://www.instagram.com/rahaalzaaer",
+            "https://www.tiktok.com/@rahatalzaer",
+          ],
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="pb-28 sm:pb-20">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <Stays />
+        <Destinations />
+        <Hajj />
+        <Catering />
+        <RealEstate />
+        <About />
+        <Why />
+        <Steps />
+        <Testimonials />
+        <Faq />
+        <Contact />
+      </main>
+      <Footer />
+      <PreviewBar />
     </div>
   );
 }
