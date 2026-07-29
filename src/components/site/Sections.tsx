@@ -276,7 +276,7 @@ export function Catering() {
             title="ضيافة وطعام بمعايير احترافية"
             desc="حلول إعاشة متكاملة للفنادق والفعاليات والمجموعات وضيوف الرحمن."
           />
-          <ul className="mt-8 grid gap-2.5 sm:grid-cols-2">
+          <ul className="mt-8 grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
             {CATERING.map((c) => (
               <li
                 key={c}
