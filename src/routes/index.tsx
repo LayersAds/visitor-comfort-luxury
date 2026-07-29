@@ -84,6 +84,8 @@ function Index() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
+
     </div>
   );
 }
