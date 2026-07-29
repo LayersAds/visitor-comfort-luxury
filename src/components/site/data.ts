@@ -46,22 +46,10 @@ export const SERVICES = [
     img: "/images/hajj.jpg",
   },
   {
-    title: "تنظيم الرحلات السياحية",
-    desc: "برامج سياحية داخل المملكة وخارجها بجداول مدروسة ومريحة.",
-    icon: "compass",
-    img: "/images/alula.jpg",
-  },
-  {
     title: "المنتجعات والشاليهات",
     desc: "منتجعات وشاليهات واستراحات لقضاء إجازة عائلية هادئة.",
     icon: "palm",
     img: "/images/resort.jpg",
-  },
-  {
-    title: "فنادق في جميع مناطق المملكة",
-    desc: "تغطية واسعة تشمل الرياض وجدة والطائف والعلا وأبها والشرقية.",
-    icon: "map",
-    img: "/images/riyadh.jpg",
   },
 ];
 
