@@ -121,7 +121,7 @@ export function Stays() {
           desc="مجموعات منظمة من وحدات الضيافة تناسب الأفراد والعائلات والمجموعات والشركات."
           center
         />
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-2">
           {STAY_GROUPS.map((g) => (
             <article key={g.title} className="card-lux card-lux-hover overflow-hidden">
               <img
@@ -130,7 +130,7 @@ export function Stays() {
                 loading="lazy"
                 width={1200}
                 height={900}
-                className="h-52 w-full object-cover"
+                className="h-64 w-full object-cover sm:h-72"
               />
               <div className="p-6">
                 <h3 className="text-xl text-primary">{g.title}</h3>
@@ -161,7 +161,7 @@ export function Destinations() {
           desc="تغطية واسعة تبدأ من الحرمين الشريفين وتمتد إلى أبرز مدن ومناطق المملكة."
           center
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {DESTINATIONS.map((d) => (
             <article
               key={d.name}
@@ -276,7 +276,7 @@ export function Catering() {
             title="ضيافة وطعام بمعايير احترافية"
             desc="حلول إعاشة متكاملة للفنادق والفعاليات والمجموعات وضيوف الرحمن."
           />
-          <ul className="mt-8 grid gap-2.5 sm:grid-cols-2">
+          <ul className="mt-8 grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
             {CATERING.map((c) => (
               <li
                 key={c}
