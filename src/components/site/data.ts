@@ -52,12 +52,6 @@ export const SERVICES = [
     img: "/images/alula.jpg",
   },
   {
-    title: "حلول الشركات والمجموعات",
-    desc: "حجوزات جماعية للوفود والمؤتمرات والفعاليات وسفر الأعمال.",
-    icon: "briefcase",
-    img: "/images/corporate.jpg",
-  },
-  {
     title: "المنتجعات والشاليهات",
     desc: "منتجعات وشاليهات واستراحات لقضاء إجازة عائلية هادئة.",
     icon: "palm",
