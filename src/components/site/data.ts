@@ -52,12 +52,6 @@ export const SERVICES = [
     img: "/images/alula.jpg",
   },
   {
-    title: "حلول الشركات والمجموعات",
-    desc: "حجوزات جماعية للوفود والمؤتمرات والفعاليات وسفر الأعمال.",
-    icon: "briefcase",
-    img: "/images/corporate.jpg",
-  },
-  {
     title: "المنتجعات والشاليهات",
     desc: "منتجعات وشاليهات واستراحات لقضاء إجازة عائلية هادئة.",
     icon: "palm",
@@ -68,12 +62,6 @@ export const SERVICES = [
     desc: "تغطية واسعة تشمل الرياض وجدة والطائف والعلا وأبها والشرقية.",
     icon: "map",
     img: "/images/riyadh.jpg",
-  },
-  {
-    title: "خدمات وكالات السفر",
-    desc: "أسعار وخدمات تشغيلية لوكالات السفر ومنظمي الرحلات الجماعية.",
-    icon: "handshake",
-    img: "/images/reception.jpg",
   },
 ];
 
