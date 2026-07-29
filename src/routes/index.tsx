@@ -14,6 +14,7 @@ import {
 } from "@/components/site/Sections";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 
 
 const TITLE = "شركة راحة الزائر للسياحة | حجوزات الفنادق ووحدات الضيافة";
