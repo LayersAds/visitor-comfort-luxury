@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Star } from "lucide-react";
 import {
   BedDouble,
   KeyRound,
@@ -13,9 +12,7 @@ import {
   Handshake,
   Check,
   ChevronDown,
-  Quote,
   UtensilsCrossed,
-  Building2,
 } from "lucide-react";
 import {
   SERVICES,
@@ -23,7 +20,6 @@ import {
   DESTINATIONS,
   WHY,
   CATERING,
-  REALESTATE,
   STEPS,
   FAQ,
 } from "./data";
@@ -297,43 +293,6 @@ export function Catering() {
   );
 }
 
-export function RealEstate() {
-  return (
-    <section className="bg-secondary py-24">
-      <div className="container-x grid items-center gap-12 lg:grid-cols-2">
-        <div>
-          <SectionHead
-            eyebrow="للمستثمرين وشركاء الأعمال"
-            title="حلول عقارية وسياحية"
-            desc="خدمات موجهة للمستثمرين وملاك الوحدات وشركاء القطاع السياحي في المملكة."
-          />
-          <ul className="mt-8 grid gap-2.5 sm:grid-cols-2">
-            {REALESTATE.map((r) => (
-              <li
-                key={r}
-                className="flex items-start gap-2 rounded-xl bg-card px-4 py-3 text-sm text-foreground/85 shadow-[var(--shadow-soft)]"
-              >
-                <Building2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                {r}
-              </li>
-            ))}
-          </ul>
-          <a href="#contact" className="btn-navy mt-8">
-            تحدث مع فريق الاستثمار
-          </a>
-        </div>
-        <img
-          src="/images/realestate.jpg"
-          alt="مشروع تطوير عقاري سكني وتجاري في المملكة"
-          loading="lazy"
-          width={1200}
-          height={900}
-          className="h-[24rem] w-full rounded-[2rem] object-cover shadow-[var(--shadow-lift)]"
-        />
-      </div>
-    </section>
-  );
-}
 
 export function About() {
   return (
@@ -413,60 +372,6 @@ export function Steps() {
   );
 }
 
-const REVIEWS = [
-  {
-    name: "أ. عبدالله الحارثي",
-    role: "زائر من الرياض",
-    text: "حجزت مع شركة راحة الزائر فندقًا قريبًا من الحرم، والتنسيق كان دقيقًا من أول رسالة حتى الوصول. الغرفة مطابقة للصور تمامًا والخدمة راقية.",
-  },
-  {
-    name: "أ. منيرة العتيبي",
-    role: "رحلة عائلية – المدينة المنورة",
-    text: "أفضل تجربة حجز مررت بها. اختاروا لنا شقة عائلية واسعة بسعر ممتاز، والمتابعة معنا كانت مستمرة طوال الإقامة. شكرًا شركة راحة الزائر.",
-  },
-  {
-    name: "أ. سعد القحطاني",
-    role: "مشرف وفد عمرة",
-    text: "نظّموا لنا إقامة وإعاشة وفد من 40 شخصًا في مكة المكرمة باحترافية عالية والتزام كامل بالمواعيد. تعامل صادق وأسعار منافسة، وسنكرر التعامل بإذن الله.",
-  },
-];
-
-export function Testimonials() {
-  return (
-    <section className="surface-navy py-24">
-      <div className="container-x">
-        <SectionHead eyebrow="آراء العملاء" title="تجارب ضيوفنا" light center />
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {REVIEWS.map((r) => (
-            <figure
-              key={r.name}
-              className="rounded-3xl border border-white/15 bg-white/5 p-7 text-primary-foreground/80"
-            >
-              <Quote className="h-7 w-7 text-accent" />
-              <div className="mt-4 flex gap-1 text-accent" aria-label="تقييم 5 من 5">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <blockquote className="mt-4 text-sm leading-8">{r.text}</blockquote>
-              <figcaption className="mt-6 flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/20 text-sm font-extrabold text-accent">
-                  {r.name.replace("أ. ", "").charAt(0)}
-                </span>
-                <span>
-                  <span className="block text-sm font-extrabold text-primary-foreground">
-                    {r.name}
-                  </span>
-                  <span className="block text-xs text-primary-foreground/60">{r.role}</span>
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);

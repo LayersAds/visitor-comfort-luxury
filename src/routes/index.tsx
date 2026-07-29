@@ -7,11 +7,9 @@ import {
   Destinations,
   Hajj,
   Catering,
-  RealEstate,
   About,
   Why,
   Steps,
-  Testimonials,
   Faq,
 } from "@/components/site/Sections";
 import { Contact } from "@/components/site/Contact";
@@ -78,11 +76,9 @@ function Index() {
         <Destinations />
         <Hajj />
         <Catering />
-        <RealEstate />
         <About />
         <Why />
         <Steps />
-        <Testimonials />
         <Faq />
         <Contact />
       </main>
