@@ -69,8 +69,6 @@ export const STAY_GROUPS = [
 export const DESTINATIONS = [
   { name: "مكة المكرمة", img: "/images/makkah.jpg", desc: "إقامة قريبة من الحرم بخيارات متنوعة." },
   { name: "المدينة المنورة", img: "/images/madinah.jpg", desc: "وحدات مريحة بجوار المسجد النبوي." },
-  { name: "الرياض", img: "/images/riyadh.jpg", desc: "فنادق أعمال ووحدات مخدومة في العاصمة." },
-  { name: "جدة", img: "/images/jeddah.jpg", desc: "إقامات على الكورنيش وقرب البحر الأحمر." },
   { name: "الطائف", img: "/images/taif.jpg", desc: "أجواء جبلية معتدلة ومنتجعات هادئة." },
   { name: "العلا", img: "/images/alula.jpg", desc: "تجربة تراثية وصحراوية استثنائية." },
   { name: "أبها", img: "/images/abha.jpg", desc: "مرتفعات خضراء ومناخ لطيف صيفًا." },
