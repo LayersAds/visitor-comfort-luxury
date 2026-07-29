@@ -63,12 +63,6 @@ export const SERVICES = [
     icon: "map",
     img: "/images/riyadh.jpg",
   },
-  {
-    title: "خدمات وكالات السفر",
-    desc: "أسعار وخدمات تشغيلية لوكالات السفر ومنظمي الرحلات الجماعية.",
-    icon: "handshake",
-    img: "/images/reception.jpg",
-  },
 ];
 
 export const STAY_GROUPS = [
