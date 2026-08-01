@@ -52,15 +52,24 @@ export function Footer() {
             {NAV.map((n) => (
               <li key={n.href}>
                 <a
-                  href={n.href}
+                  href={`/${n.href}`}
                   className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
                 >
                   {n.label}
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/cancellation-policy"
+                className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
+              >
+                سياسة الإلغاء
+              </Link>
+            </li>
           </ul>
         </nav>
+
 
         <div>
           <h3 className="text-base text-primary-foreground">خدماتنا</h3>
