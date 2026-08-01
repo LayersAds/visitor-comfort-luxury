@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
+import { useRouterState } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV, WHATSAPP_COMPANY } from "./data";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [solid, setSolid] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
+  const solid = scrolled || !isHome;
+  const link = (hash: string) => (isHome ? hash : `/${hash}`);
 
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -20,7 +25,7 @@ export function Header() {
       }`}
     >
       <div className="container-x flex h-20 items-center justify-between gap-4">
-        <a href="#home" className="flex items-center gap-3">
+        <a href={link("#home")} className="flex items-center gap-3">
           <img
             src="/images/logo.png"
             alt="شعار شركة راحة الزائر للسياحة"
@@ -46,7 +51,7 @@ export function Header() {
           {NAV.map((n) => (
             <a
               key={n.href}
-              href={n.href}
+              href={link(n.href)}
               className={`rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
                 solid
                   ? "text-primary/80 hover:bg-secondary hover:text-primary"
@@ -59,7 +64,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href="#contact" className="btn-gold hidden !px-5 !py-2.5 text-sm sm:inline-flex">
+          <a href={link("#contact")} className="btn-gold hidden !px-5 !py-2.5 text-sm sm:inline-flex">
             احجز الآن
           </a>
           <a
@@ -92,14 +97,14 @@ export function Header() {
             {NAV.map((n) => (
               <a
                 key={n.href}
-                href={n.href}
+                href={link(n.href)}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3 py-3 text-sm font-semibold text-primary hover:bg-secondary"
               >
                 {n.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="btn-gold mt-2">
+            <a href={link("#contact")} onClick={() => setOpen(false)} className="btn-gold mt-2">
               احجز الآن
             </a>
           </div>
