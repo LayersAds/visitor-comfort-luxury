@@ -7,9 +7,6 @@ export const TIKTOK = "https://www.tiktok.com/@rahatalzaer?_r=1&_t=ZS-98LqpX1g3A
 export const NAV = [
   { label: "الرئيسية", href: "#home" },
   { label: "خدماتنا", href: "#services" },
-  { label: "خيارات الإقامة", href: "#stays" },
-  { label: "الوجهات", href: "#destinations" },
-  { label: "لماذا نحن؟", href: "#why" },
   { label: "من نحن", href: "#about" },
   { label: "تواصل معنا", href: "#contact" },
 ];
