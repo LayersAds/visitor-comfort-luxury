@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ExternalLink, Instagram, MapPin, Phone } from "lucide-react";
 
-import { NAV, SERVICES, INSTAGRAM, TIKTOK, WHATSAPP_COMPANY } from "./data";
+import { FOOTER_NAV, SERVICES, INSTAGRAM, TIKTOK, WHATSAPP_COMPANY } from "./data";
 import { TikTokIcon } from "./TikTokIcon";
 
 export function Footer() {
@@ -51,7 +51,7 @@ export function Footer() {
         <nav>
           <h3 className="text-base text-primary-foreground">روابط الموقع</h3>
           <ul className="mt-4 space-y-2.5">
-            {NAV.map((n) => (
+            {FOOTER_NAV.map((n) => (
               <li key={n.href}>
                 <a
                   href={`/${n.href}`}
