@@ -104,7 +104,7 @@ export function Footer() {
               مكة المكرمة – حي العوالي
             </li>
           </ul>
-          <a href="#contact" className="btn-gold mt-6 !py-2.5 text-sm">
+          <a href="/#contact" className="btn-gold mt-6 !py-2.5 text-sm">
             احجز الآن
           </a>
         </div>
