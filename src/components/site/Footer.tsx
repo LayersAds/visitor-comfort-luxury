@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { ExternalLink, Instagram, MapPin, Phone } from "lucide-react";
+
 import { NAV, SERVICES, INSTAGRAM, TIKTOK, WHATSAPP_COMPANY } from "./data";
 import { TikTokIcon } from "./TikTokIcon";
 
