@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { ExternalLink, Instagram, MapPin, Phone } from "lucide-react";
+
 import { NAV, SERVICES, INSTAGRAM, TIKTOK, WHATSAPP_COMPANY } from "./data";
 import { TikTokIcon } from "./TikTokIcon";
 
@@ -52,15 +54,24 @@ export function Footer() {
             {NAV.map((n) => (
               <li key={n.href}>
                 <a
-                  href={n.href}
+                  href={`/${n.href}`}
                   className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
                 >
                   {n.label}
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/cancellation-policy"
+                className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
+              >
+                سياسة الإلغاء
+              </Link>
+            </li>
           </ul>
         </nav>
+
 
         <div>
           <h3 className="text-base text-primary-foreground">خدماتنا</h3>
@@ -93,7 +104,7 @@ export function Footer() {
               مكة المكرمة – حي العوالي
             </li>
           </ul>
-          <a href="#contact" className="btn-gold mt-6 !py-2.5 text-sm">
+          <a href="/#contact" className="btn-gold mt-6 !py-2.5 text-sm">
             احجز الآن
           </a>
         </div>
